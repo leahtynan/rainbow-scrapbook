@@ -1,4 +1,4 @@
-# rainbow-scrapbook
+# Rainbow Scrapbook
 Digital scrapbook with pages for six colors.
  
 This is a project idea from 2016 that I'm reviving and building out in a more flexible manner. The concept is a digital scrapbook where each section shows objects of all the same color, and navigating through the color wheel cycles through all the colors. My original idea was for the collections to be animals, but I decided to change it to all table-top-sized objects so I can collect my own images rather than need to purchase images. My inspirations are natural collections in museums and I Spy books from the 90’s.
