@@ -135,6 +135,23 @@ h3 {
   margin: 0 12px;
 }
 
+#left-arrow {
+   width: 0;
+   height: 0;
+   border-right: 22px solid white;
+   border-top: 22px solid transparent;
+   border-bottom: 22px solid transparent;
+}
+
+#right-arrow {
+   width: 0;
+   height: 0;
+   border-left: 22px solid white;
+   border-top: 22px solid transparent;
+   border-bottom: 22px solid transparent;
+}
+
+
 #left-triangle-red {
    width: 0;
    height: 0;
