@@ -1,31 +1,64 @@
-var currentColor = 0; 
-var colors = ["Yellow", "Green", "Blue", "Purple", "Red", "Orange"]; // Colors that will be cycled through
+var position = 0; 
+var colors = ["Yellow", "Green", "Blue", "Purple", "Red", "Orange"]; 
+var data = {
+	"Yellow": {
+		"angle": -30,
+		"hex": "ffff00",
+		"files": ["a", "b", "c", "d"]
+	},
+	"Green": {
+		"angle": -90,
+		"hex": "63bb45",
+		"files": ["a", "b", "c", "d"]
+	},
+	"Blue": {
+		"angle": -150,
+		"hex": "0000ff",
+		"files": ["a", "b", "c", "d"]
+	},
+	"Purple": {
+		"angle": 150,
+		"hex": "6f22b6",
+		"files": ["a", "b", "c", "d"]
+	},
+	"Red": {
+		"angle": 90,
+		"hex": "ff0000",
+		"files": ["a", "b", "c", "d"]
+	},
+	"Orange": {
+		"angle": 30,
+		"hex": "ffa500",
+		"files": ["a", "b", "c", "d"]
+	},
+}
 
+// TODO: Set up all the CSS for the default color (yellow) on page load
 
 function changeColor(direction) {
 // *** Cycles through the color wheel one unit, direction dependent on whether left or right arrow is pressed ***
 	if (direction == "left") {
-	// TODO: Grab color slice's degree of rotation from JSON 
-	//document.getElementById("color-wheel").style.transform = "rotate(-30deg)";
-		if (currentColor == 0) {
-			currentColor = 5;
+		if (position == 0) {
+			position = 5;
 		} else {
-			currentColor--;
+			position--;
 		}
 	}
 	else if (direction == "right") {
-	// TODO: Grab color slice's degree of rotation from JSON 
-	//document.getElementById("color-wheel").style.transform = "rotate(30deg)";
-		if (currentColor == 5) {
-			currentColor = 0;
+		if (position == 5) {
+			position = 0;
 		} else {
-			currentColor++;
+			position++;
 		}
 	}
-	console.log("The new color is: " + colors[currentColor]);
-	// TODO: Update the color of the arrows and the title text
-	// TODO: Change background color to the one specified in JSON
-	// TODO: Update title text to be the name of the new color
+	var color = colors[position];
+	var prevColor = colors[position - 1];
+	var nextColor = colors[position + 1]
+	document.body.style.backgroundColor = data[color].hex;
+	document.getElementById("color-wheel").style = "transform: rotate(" + data[color].angle + "deg)";
+	document.getElementById("left-arrow").style.borderRight = "22px solid #" + data[prevColor].hex;
+	document.getElementById("right-arrow").style.borderLeft = "22px solid #" + data[nextColor].hex;
+	document.getElementById("title").innerHTML = colors[position];
 	for (i = 0; i < 10; i++) { 
 		// TODO: Load all the images, using filenames stored for the new color in JSON
     }

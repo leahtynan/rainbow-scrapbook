@@ -41,18 +41,6 @@ h3 {
   font-size: 20px;
 }
 
-.yellow {
-  color: yellow;
-}
-
-.orange {
-  color: orange;
-}
-
-.green {
-  color: #63bb45;
-}
-
 #header {
   height: 100px;
   display block;
@@ -138,7 +126,7 @@ h3 {
 #left-arrow {
    width: 0;
    height: 0;
-   border-right: 22px solid white;
+   border-right: 22px solid yellow;
    border-top: 22px solid transparent;
    border-bottom: 22px solid transparent;
 }
@@ -146,57 +134,7 @@ h3 {
 #right-arrow {
    width: 0;
    height: 0;
-   border-left: 22px solid white;
-   border-top: 22px solid transparent;
-   border-bottom: 22px solid transparent;
-}
-
-
-#left-triangle-red {
-   width: 0;
-   height: 0;
-   border-right: 22px solid red;
-   border-top: 22px solid transparent;
-   border-bottom: 22px solid transparent;
-}
-
-#left-triangle-orange {
-   width: 0;
-   height: 0;
-   border-right: 22px solid orange;
-   border-top: 22px solid transparent;
-   border-bottom: 22px solid transparent;
-}
-
-#left-triangle-yellow {
-   width: 0;
-   height: 0;
-   border-right: 22px solid yellow;
-   border-top: 22px solid transparent;
-   border-bottom: 22px solid transparent;
-}
-
-#right-triangle-yellow {
-   width: 0;
-   height: 0;
    border-left: 22px solid yellow;
    border-top: 22px solid transparent;
    border-bottom: 22px solid transparent;
 }
-
-#right-triangle-green {
-   width: 0;
-   height: 0;
-   border-left: 22px solid #63bb45;
-   border-top: 22px solid transparent;
-   border-bottom: 22px solid transparent;
-}
-
-#right-triangle-blue {
-   width: 0;
-   height: 0;
-   border-left: 22px solid blue;
-   border-top: 22px solid transparent;
-   border-bottom: 22px solid transparent;
-}
-
