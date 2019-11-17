@@ -5,6 +5,6 @@ This is a project idea from 2016 that I'm reviving and building out in a more fl
 
 In my 2016 prototype, I had an HTML page for each color. For this new version, my plan is to store the data about each color (object file names, color name, etc.) in a JSON file and use it to re-load the visuals each time the user navigates to a new color.
 
-The application uses several external resources: the Masonry cascading grid layout library by David Desandro, the CSS conic gradient polyfill by Lea Verou, jQuery, and Modernizr. 
+This work-in-progress uses several external resources: the Masonry cascading grid layout library by David Desandro, the CSS conic gradient polyfill by Lea Verou, jQuery, and Modernizr. I'm unsure whether I'll continue using them.
 
-I'm still working on gathering and editing all the images, so the scrapbook currently uses placeholders.
+I'm working on gathering and editing all the images with the help of one of my artist friends. I made sure to photograph a yellow, orange, and red leaf while we were in peak foliage in Boston!
