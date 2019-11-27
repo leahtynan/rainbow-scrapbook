@@ -37,14 +37,14 @@ var data = {
 
 function changeColor(direction) {
 // *** Cycles through the color wheel one unit, direction dependent on whether left or right arrow is pressed ***
-	if (direction == "left") {
+	if (direction == "right") {
 		if (position == 0) {
 			position = 5;
 		} else {
 			position--;
 		}
 	}
-	else if (direction == "right") {
+	else if (direction == "left") {
 		if (position == 5) {
 			position = 0;
 		} else {
@@ -56,8 +56,6 @@ function changeColor(direction) {
 	var nextColor = colors[position + 1]
 	document.body.style.backgroundColor = data[color].hex;
 	document.getElementById("color-wheel").style = "transform: rotate(" + data[color].angle + "deg)";
-	document.getElementById("left-arrow").style.borderRight = "22px solid #" + data[prevColor].hex;
-	document.getElementById("right-arrow").style.borderLeft = "22px solid #" + data[nextColor].hex;
 	document.getElementById("title").innerHTML = colors[position];
 	for (i = 0; i < 10; i++) { 
 		// TODO: Load all the images, using filenames stored for the new color in JSON
