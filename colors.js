@@ -4,47 +4,45 @@ var data = {
 	"Yellow": {
 		"angle": -30,
 		"hex": "ffff00",
-		"files": ["a", "b", "c", "d"]
+		"files": ["leaf_yellow", "star", "leaf_yellow", "star", "leaf_yellow", "star", "leaf_yellow", "star"]
 	},
 	"Green": {
 		"angle": -90,
 		"hex": "63bb45",
-		"files": ["a", "b", "c", "d"]
+		"files": ["hedgehog_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "measuring-cup"]
 	},
 	"Blue": {
 		"angle": -150,
 		"hex": "0000ff",
-		"files": ["a", "b", "c", "d"]
+		"files": ["hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue"]
 	},
 	"Purple": {
 		"angle": 150,
 		"hex": "6f22b6",
-		"files": ["a", "b", "c", "d"]
+		"files": ["coil", "dumbbell", "coil", "dumbbell", "coil", "dumbbell", "coil", "dumbbell"]
 	},
 	"Red": {
 		"angle": 90,
 		"hex": "ff0000",
-		"files": ["a", "b", "c", "d"]
+		"files": ["vase", "leaf_red", "vase", "leaf_red", "vase", "leaf_red", "vase", "leaf_red"]
 	},
 	"Orange": {
 		"angle": 30,
 		"hex": "ffa500",
-		"files": ["a", "b", "c", "d"]
+		"files": ["leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange"]
 	},
 }
 
-// TODO: Set up all the CSS for the default color (yellow) on page load
-
 function changeColor(direction) {
 // *** Cycles through the color wheel one unit, direction dependent on whether left or right arrow is pressed ***
-	if (direction == "right") {
+	if (direction == "left") {
 		if (position == 0) {
 			position = 5;
 		} else {
 			position--;
 		}
 	}
-	else if (direction == "left") {
+	else if (direction == "right") {
 		if (position == 5) {
 			position = 0;
 		} else {
@@ -57,8 +55,10 @@ function changeColor(direction) {
 	document.body.style.backgroundColor = data[color].hex;
 	document.getElementById("color-wheel").style = "transform: rotate(" + data[color].angle + "deg)";
 	document.getElementById("title").innerHTML = colors[position];
-	for (i = 0; i < 10; i++) { 
-		// TODO: Load all the images, using filenames stored for the new color in JSON
+	var images = document.getElementsByClassName('image-to-update');
+	for (i = 0; i < 8; i++) { 
+		console.log("Filename: " + data[color].files[i]);
+		images[i].src = "images/" + data[color].files[i] + ".png";
     }
 }
 
