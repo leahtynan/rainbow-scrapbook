@@ -19,7 +19,7 @@ var data = {
 	"Purple": {
 		"angle": 150,
 		"hex": "6f22b6",
-		"files": ["coil", "dumbbell", "coil", "dumbbell", "coil", "dumbbell", "coil", "dumbbell"]
+		"files": ["coil", "dumbbell", "amethyst-chunk", "amethyst-chunk", "coil", "amethyst-shard", "amethyst-shard", "dumbbell"]
 	},
 	"Red": {
 		"angle": 90,
@@ -29,7 +29,7 @@ var data = {
 	"Orange": {
 		"angle": 30,
 		"hex": "ffa500",
-		"files": ["leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange", "leaf_orange"]
+		"files": ["leaf_orange", "citrine", "leaf_orange", "leaf_orange", "leaf_orange", "citrine", "leaf_orange", "citrine"]
 	},
 }
 
