@@ -3,6 +3,4 @@ This is a user interface for exploring brilliantly colored collections of object
  
 Each section shows objects of all the same color (red, orange, yellow, green, blue, and purple), and navigating through the color wheel cycles through all the colors. My inspirations are natural collections in museums and I Spy books from the 90’s. All objects here are table-top sized objects from in and around my home.
 
-This work-in-progress uses the Masonry cascading grid layout library by David Desandro and the CSS conic gradient polyfill by Lea Verou. For now, I'm unsure whether I'll continue using Masonry or consider another CSS framework for image galleries.
-
-I'm working on gathering and editing all the images with the help of one of my artist friends. I made sure to photograph yellow, orange, and red leaves while we were in peak foliage in Boston!
+This project uses the Masonry cascading grid layout library by David Desandro and the CSS conic gradient polyfill by Lea Verou. 
