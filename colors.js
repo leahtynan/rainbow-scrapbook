@@ -4,32 +4,33 @@ var data = {
 	"Yellow": {
 		"angle": -30,
 		"hex": "ffff00",
-		"files": ["leaf_yellow", "star", "leaf_yellow", "star", "leaf_yellow", "star", "leaf_yellow", "star"]
+		"files": ["leaf_yellow", "star", "nail-polish_yellow", "rubber-ducky_yellow", "rubber-ducky_yellow", "star", "leaf_yellow", "star"]
+		// TODO: Add alt text for each picture
 	},
 	"Green": {
 		"angle": -90,
 		"hex": "63bb45",
-		"files": ["hedgehog_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "measuring-cup"]
+		"files": ["bow_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "measuring-cup", "nail-polish_green", "snake-plant", "succulent"]
 	},
 	"Blue": {
 		"angle": -150,
 		"hex": "0000ff",
-		"files": ["hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue", "hedgehog_blue"]
+		"files": ["glass-jar_blue", "hedgehog_blue", "wavy-glass-jar", "glass-bird", "nail-polish_blue", "hedgehog_blue", "piggy", "wavy-glass-jar"]
 	},
 	"Purple": {
 		"angle": 150,
 		"hex": "6f22b6",
-		"files": ["coil", "dumbbell", "amethyst-chunk", "amethyst-chunk", "coil", "amethyst-shard", "amethyst-shard", "dumbbell"]
+		"files": ["nail-polish_purple", "dumbbell", "glass-jar_purple", "amethyst-chunk", "amethyst-shard", "coil", "amethyst-shard", "dumbbell"]
 	},
 	"Red": {
 		"angle": 90,
 		"hex": "ff0000",
-		"files": ["vase", "leaf_red", "vase", "leaf_red", "vase", "leaf_red", "vase", "leaf_red"]
+		"files": ["clip", "leaf_red", "vase", "bow_red", "nail-polish_red", "bow_red", "vase", "leaf_red"]
 	},
 	"Orange": {
 		"angle": 30,
 		"hex": "ffa500",
-		"files": ["leaf_orange", "citrine", "leaf_orange", "leaf_orange", "leaf_orange", "citrine", "leaf_orange", "citrine"]
+		"files": ["leaf_orange", "citrine", "cat-dish", "leaf_orange", "leaf_orange", "nail-polish_orange", "leaf_orange", "citrine"]
 	},
 }
 
@@ -59,6 +60,7 @@ function changeColor(direction) {
 	for (i = 0; i < 8; i++) { 
 		console.log("Filename: " + data[color].files[i]);
 		images[i].src = "images/" + data[color].files[i] + ".png";
+		// TODO: Add alt text
     }
 }
 

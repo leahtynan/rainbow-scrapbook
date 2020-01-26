@@ -51,7 +51,7 @@ h3 {
 .grid {
   max-width: 1200px;
   display: block;
-  margin: 25px;
+  margin: 25px auto;
 }
 
 /* clearfix */
@@ -67,8 +67,8 @@ h3 {
   width: 160px;
   height: 120px;
   float: left;
-/*  background: #D26;*/
-/*  border: 2px solid #333;*/
+  //background-color: red;
+  display: block;
   border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
 }
