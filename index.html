@@ -1,60 +1,83 @@
 <html>
 <head>
-	<title>Rainbow Scrapbook &ndash; Work-in-Progress</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+	<title>Rainbow Scrapbook</title>
+	<!-- TODO: Add meta data once this goes online -->
 	<script src="http://leaverou.github.io/conic-gradient/conic-gradient.js"></script>
-	<script src="cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="http://masonry.desandro.com/masonry.pkgd.js"></script>
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
+<!-- Color Wheel Polyfill -->
 <style>
-  #color-wheel {
-    margin: 10px auto;
-    width: 80px;
-    height: 80px;
-    background: conic-gradient(yellow 16.67%, #63bb45 0 33.33%, blue 0 50%, #6f22b6 0 67.67%, red 0 84.33%, orange 0);
-    border-radius: 50%;
-    box-shadow: 1px 1px 1px black;
-    transform:rotate(-30deg);
+	#color-wheel {
+		margin: 10px auto;
+		width: 80px;
+		height: 80px;
+		background: conic-gradient(yellow 16.67%, #63bb45 0 33.33%, blue 0 50%, #6f22b6 0 67.67%, red 0 84.33%, orange 0);
+		border-radius: 50%;
+		box-shadow: 1px 1px 1px black;
+		transform:rotate(-30deg);
   }
 </style>
 
 <body>
-
-<div class="se-pre-con"></div>
-
-<div class="grid">
-	<div class="grid-item item"><img class="image-to-update" src="images/leaf_yellow.png"></div>
-	<div class="grid-item grid-item--width2 grid-item--height2 item"><img class="image-to-update" src="images/star.png"></div>
-	<div class="grid-item item"><img class="image-to-update" src="images/leaf_yellow.png"></div>
-	<div class="grid-item grid-item--width2 grid-item--height3 item"><img class="image-to-update" src="images/star.png"></div>
-	<div class="grid-item grid-item--height3 item"><img class="image-to-update" src="images/leaf_yellow.png"></div>
-	<div class="grid-item item"><img class="image-to-update" src="images/star.png"></div>
-	<div class="grid-item item"><img class="image-to-update" src="images/leaf_yellow.png"></div>
-	<div class="grid-item item"><img class="image-to-update" src="images/star.png"></div>
-</div>
-
-
-<footer id="footer">
-  <ul id="navigation">
-    <li id="left-arrow" class="arrow"><img src="images/arrow.png" alt="Arrow for turning the color wheel left" title="Arrow for turning the color wheel left"></a></li>
-    <li id="title-container"><h1 id="title">Yellow</h1><div id="color-wheel"></div></li>
-    <li id="right-arrow" class="arrow"><img src="images/arrow.png" alt="Arrow for turning the color wheel right" title="Arrow for turning the color wheel right"></li>
-  </ul>
-</footer>
-
-<script>
-	$('.grid').masonry({
-  	  itemSelector: '.grid-item',
-  	  columnWidth: 160
-	});
-</script>
 	
-<script type="text/javascript" src="colors.js"></script> 
+	<!-- Content -->
+	<div class="grid">
+		<div class="grid-item item">
+			<img class="image-to-update" src="images/leaf_yellow.png">
+		</div>
+		<div class="grid-item grid-item--width2 grid-item--height2 item">
+			<img class="image-to-update" src="images/star.png">
+		</div>
+		<div class="grid-item item">
+			<img class="image-to-update" src="images/rubber-ducky_yellow.png">
+		</div>
+		<div class="grid-item grid-item--width2 grid-item--height3 item">
+			<img class="image-to-update" src="images/rubber-ducky_yellow.png">
+		</div>
+		<div class="grid-item grid-item--height3 item">
+			<img class="image-to-update" src="images/nail-polish_yellow.png">
+		</div>
+		<div class="grid-item item">
+			<img class="image-to-update" src="images/star.png">
+		</div>
+		<div class="grid-item item">
+			<img class="image-to-update" src="images/leaf_yellow.png">
+		</div>
+		<div class="grid-item item">
+			<img class="image-to-update" src="images/star.png">
+		</div>
+	</div>
+	
+	<!-- User Interface -->
+	<footer id="footer">
+		<ul id="navigation">
+			<li id="left-arrow" class="arrow"><img src="images/arrow.png" alt="Arrow for turning the color wheel left" title="Arrow for turning the color wheel left"></a></li>
+			<li id="title-container"><h1 id="title">Yellow</h1><div id="color-wheel"></div></li>
+			<li id="right-arrow" class="arrow"><img src="images/arrow.png" alt="Arrow for turning the color wheel right" title="Arrow for turning the color wheel right"></li>
+		</ul>
+	</footer>
+
+	<!-- Masonry Initializer -->
+	<script>
+		console.log("got here");
+		var elem = document.querySelector('.grid');
+		var msnry = new Masonry( elem, {
+			// options
+			itemSelector: '.grid-item',
+			columnWidth: 200
+		});
+
+		// element argument can be a selector string
+		//   for an individual element
+		var msnry = new Masonry( '.grid', {
+			// options
+		});
+	</script>
+	
+	<!-- Color Wheel Data & User Interface Operations -->
+	<script type="text/javascript" src="colors.js"></script> 
 
 </body>
-
 </html>

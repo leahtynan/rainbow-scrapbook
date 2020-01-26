@@ -4,13 +4,14 @@ var data = {
 	"Yellow": {
 		"angle": -30,
 		"hex": "ffff00",
-		"files": ["leaf_yellow", "star", "nail-polish_yellow", "rubber-ducky_yellow", "rubber-ducky_yellow", "star", "leaf_yellow", "star"]
+		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "rubber-ducky_yellow", "nail-polish_yellow", "star", "leaf_yellow", "star"]
 		// TODO: Add alt text for each picture
+		// TODO: Note whether image is horizontal, vertical, or square, and generate the appropriate Masonry classes accordingly
 	},
 	"Green": {
 		"angle": -90,
 		"hex": "63bb45",
-		"files": ["bow_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "measuring-cup", "nail-polish_green", "snake-plant", "succulent"]
+		"files": ["bow_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "nail-polish_green", "measuring-cup", "snake-plant", "succulent"]
 	},
 	"Blue": {
 		"angle": -150,
@@ -20,7 +21,7 @@ var data = {
 	"Purple": {
 		"angle": 150,
 		"hex": "6f22b6",
-		"files": ["nail-polish_purple", "dumbbell", "glass-jar_purple", "amethyst-chunk", "amethyst-shard", "coil", "amethyst-shard", "dumbbell"]
+		"files": ["amethyst-shard", "dumbbell", "glass-jar_purple", "amethyst-chunk", "nail-polish_purple", "coil", "amethyst-chunk", "dumbbell"]
 	},
 	"Red": {
 		"angle": 90,
@@ -30,7 +31,7 @@ var data = {
 	"Orange": {
 		"angle": 30,
 		"hex": "ffa500",
-		"files": ["leaf_orange", "citrine", "cat-dish", "leaf_orange", "leaf_orange", "nail-polish_orange", "leaf_orange", "citrine"]
+		"files": ["leaf_orange", "citrine", "cat-dish", "leaf_orange", "nail-polish_orange", "leaf_orange", "leaf_orange", "citrine"]
 	},
 }
 
@@ -61,6 +62,7 @@ function changeColor(direction) {
 		console.log("Filename: " + data[color].files[i]);
 		images[i].src = "images/" + data[color].files[i] + ".png";
 		// TODO: Add alt text
+		// TODO: Set grid size based on image shape
     }
 }
 
