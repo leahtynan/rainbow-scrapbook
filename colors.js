@@ -1,5 +1,9 @@
 var position = 0; 
 var colors = ["Yellow", "Green", "Blue", "Purple", "Red", "Orange"]; 
+// TODO: Could the asset filenames be stored in XML instead? Each entry would also contain a description of the image and its color.
+// A loop would do the following:
+// 1. Check that its value for color matches the current color selected in the wheel
+// 2. If it is a color match (i.e. the asset should be displayed), then grab the filename to display it and description for alt and title text.
 var data = {
 	"Yellow": {
 		"angle": -30,
