@@ -74,26 +74,59 @@ h3 {
 }
 
 /* TODO: Re-do these numbers so they are no longer random. Need to be exact ratios like 2:3 that are adhered to by the assets, as well, to prevent image cutoff */
+
+/* Vertical Frame */
+
+.width-vertical-frame {
+	/* width: TBD */
+}
+
+.height-vertical-frame {
+	/* height: TBD */
+}
+
+
+/* TODO: Delete these later */
 .grid-item--width2 { 
-	width: 340px; 
+	width: 340px; 	
 }
-
-.grid-item--width3 {
-	width: 480px; 
- }
- 
-.grid-item--width4 {
-	width: 640px; 
-}
-
 .grid-item--height2 { 
 	height: 200px; 
 }
 
-.grid-item--height3 {
-	height: 260px; 
+/* Horizontal Frame */
+
+.width-horizontal-frame {
+	/* width: TBD */
 }
 
+.height-horizontal-frame {
+	/* height: TBD */
+}
+
+/* TODO: Delete these later */
+.grid-item--width3 {
+	width: 480px; 
+ }
+.grid-item--width3 {
+ width: 480px; 
+}
+  
+/* Square Frame */
+
+.width-square-frame {
+	/* width: TBD */
+}
+
+.height-square-frame {
+	/* height: TBD */
+}
+
+ 
+/* TODO: Delete these later */
+.grid-item--width4 {
+	width: 640px; 
+}
 .grid-item--height4 {
 	height: 360px; 
 }

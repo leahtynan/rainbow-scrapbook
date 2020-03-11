@@ -4,7 +4,9 @@ var data = {
 	"Yellow": {
 		"angle": -30,
 		"hex": "ffff00",
-		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "rubber-ducky_yellow", "nail-polish_yellow", "star", "leaf_yellow", "star"]
+		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "rubber-ducky_yellow", "nail-polish_yellow", "star", "leaf_yellow", "star"],
+		"description": ["leaf", "star", "rubber ducky", "rubber ducky", "nail polish", "star", "leaf", "star"],
+		"shapes": ["vertical", "square", "horizontal", "horizontal", "vertical", "square", "leaf_yellow", "square"]
 		// TODO: Add alt text for each picture
 		// TODO: Note whether image is horizontal, vertical, or square, and generate the appropriate Masonry classes accordingly
 	},
@@ -61,7 +63,7 @@ function changeColor(direction) {
 	for (i = 0; i < 8; i++) { 
 		console.log("Filename: " + data[color].files[i]);
 		images[i].src = "images/" + data[color].files[i] + ".png";
-		// TODO: Add alt text
+		// TODO: Add alt text, append the color to the name e.g. "yellow" + "star"
 		// TODO: Set grid size based on image shape
     }
 }
