@@ -11,33 +11,41 @@ var data = {
 		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "rubber-ducky_yellow", "nail-polish_yellow", "star", "leaf_yellow", "star"],
 		"description": ["leaf", "star", "rubber ducky", "rubber ducky", "nail polish", "star", "leaf", "star"],
 		"shapes": ["vertical", "square", "horizontal", "horizontal", "vertical", "square", "leaf_yellow", "square"]
-		// TODO: Add alt text for each picture
-		// TODO: Note whether image is horizontal, vertical, or square, and generate the appropriate Masonry classes accordingly
 	},
 	"Green": {
 		"angle": -90,
 		"hex": "63bb45",
-		"files": ["bow_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "nail-polish_green", "measuring-cup", "snake-plant", "succulent"]
+		"files": ["bow_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "nail-polish_green", "measuring-cup", "snake-plant", "succulent"],
+		"description": ["bow", "measuring cup", "rubber ducky", "hedgehog", "nail polish", "measuring cup", "snake plant", "succuluent"],
+		"shapes": ["square", "horizontal", "horizontal", "horizontal", "vertical", "horizontal", "square", "square"]
 	},
 	"Blue": {
 		"angle": -150,
 		"hex": "0000ff",
-		"files": ["glass-jar_blue", "hedgehog_blue", "wavy-glass-jar", "glass-bird", "nail-polish_blue", "hedgehog_blue", "piggy", "wavy-glass-jar"]
+		"files": ["glass-jar_blue", "hedgehog_blue", "wavy-glass-jar", "glass-bird", "nail-polish_blue", "hedgehog_blue", "piggy", "wavy-glass-jar"],
+		"description": ["cylindrical glass jar", "hedgehog", "wavy glass jar", "glass bird", "nail polish", "hedgehog", "glass piggy", "wavy glass jar"],
+		"shapes": ["vertical", "horizontal", "vertical", "square", "vertical", "horizontal", "square", "vertical"]
 	},
 	"Purple": {
 		"angle": 150,
 		"hex": "6f22b6",
-		"files": ["amethyst-shard", "dumbbell", "glass-jar_purple", "amethyst-chunk", "nail-polish_purple", "coil", "amethyst-chunk", "dumbbell"]
+		"files": ["amethyst-shard", "dumbbell", "glass-jar_purple", "amethyst-chunk", "nail-polish_purple", "coil", "amethyst-chunk", "dumbbell"],
+		"description": ["amethyst shard", "dumbbell", "cylindrical glass jar", "amethyst chunk", "nail polish", "coil of fabric", "amethyst chunk", "dumbbell"],
+		"shapes": ["horizontal", "horizontal", "vertical", "horizontal", "vertical", "square", "horizontal", "horizontal"]
 	},
 	"Red": {
 		"angle": 90,
 		"hex": "ff0000",
-		"files": ["clip", "leaf_red", "vase", "bow_red", "nail-polish_red", "bow_red", "vase", "leaf_red"]
+		"files": ["clip", "leaf_red", "vase", "bow_red", "nail-polish_red", "bow_red", "vase", "leaf_red"],
+		"description": ["clip", "leaf", "vase", "bow", "nail polish", "bow", "vase", "leaf"],
+		"shapes": ["horizontal", "square", "vertical", "square", "vertical", "square", "vertical", "square"]
 	},
 	"Orange": {
 		"angle": 30,
 		"hex": "ffa500",
 		"files": ["leaf_orange", "citrine", "cat-dish", "leaf_orange", "nail-polish_orange", "leaf_orange", "leaf_orange", "citrine"]
+		"description": ["leaf", "citrine", "cat-shaped dish", "leaf", "nail polish", "leaf", "leaf", "citrine"],
+		"shapes": ["vertical", "square", "horizontal", "vertical", "vertical", "vertical", "vertical", "square"]
 	},
 }
 
@@ -67,7 +75,8 @@ function changeColor(direction) {
 	for (i = 0; i < 8; i++) { 
 		console.log("Filename: " + data[color].files[i]);
 		images[i].src = "images/" + data[color].files[i] + ".png";
-		// TODO: Add alt text, append the color to the name e.g. "yellow" + "star"
+		images[i].alt = color + " " + "data[color].description[i] + ".png";
+		images[i].title = color + " " + "data[color].description[i] + ".png";
 		// TODO: Set grid size based on image shape
     }
 }
