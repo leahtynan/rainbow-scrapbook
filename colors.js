@@ -43,7 +43,7 @@ var data = {
 	"Orange": {
 		"angle": 30,
 		"hex": "ffa500",
-		"files": ["leaf_orange", "citrine", "cat-dish", "leaf_orange", "nail-polish_orange", "leaf_orange", "leaf_orange", "citrine"]
+		"files": ["leaf_orange", "citrine", "cat-dish", "leaf_orange", "nail-polish_orange", "leaf_orange", "leaf_orange", "citrine"],
 		"description": ["leaf", "citrine", "cat-shaped dish", "leaf", "nail polish", "leaf", "leaf", "citrine"],
 		"shapes": ["vertical", "square", "horizontal", "vertical", "vertical", "vertical", "vertical", "square"]
 	},
@@ -73,10 +73,11 @@ function changeColor(direction) {
 	document.getElementById("title").innerHTML = colors[position];
 	var images = document.getElementsByClassName('image-to-update');
 	for (i = 0; i < 8; i++) { 
+		// TODO: Need to load this data for Yellow when the page is opened
 		console.log("Filename: " + data[color].files[i]);
 		images[i].src = "images/" + data[color].files[i] + ".png";
-		images[i].alt = color + " " + "data[color].description[i] + ".png";
-		images[i].title = color + " " + "data[color].description[i] + ".png";
+		images[i].alt = color + " " + data[color].description[i];
+		images[i].title = color + " " + data[color].description[i];
 		// TODO: Set grid size based on image shape
     }
 }

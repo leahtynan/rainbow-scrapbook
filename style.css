@@ -64,82 +64,35 @@ h3 {
 /* Masonry Grid Units */
 
 .grid-item {
-	width: 160px;
-	height: 120px;
+	width: 180px;
+	height: 180px;
 	float: left;
-	background-color: black; /* Activate background color for grid debugging */
+	background-color: gray; /* Activate background color for grid debugging */
 	display: block;
 	border-color: hsla(0, 0%, 0%, 0.5);
 	border-radius: 5px;
+	margin: 10px;
+	overflow: hidden; /* This ensures the images do not go outside the bounds of the grid item */
+	
 }
 
-/* TODO: Re-do these numbers so they are no longer random. Need to be exact ratios like 2:3 that are adhered to by the assets, as well, to prevent image cutoff */
-
-/* Vertical Frame */
-
-.width-vertical-frame {
-	/* width: TBD */
-}
-
-.height-vertical-frame {
-	/* height: TBD */
-}
-
-
-/* TODO: Delete these later */
-.grid-item--width2 { 
-	width: 340px; 	
-}
-.grid-item--height2 { 
-	height: 200px; 
+.vertical {
+	width: 180px;
+	background-color: red; /* Activate background color for grid debugging */
+	height: 360px;
 }
 
 /* Horizontal Frame */
 
-.width-horizontal-frame {
-	/* width: TBD */
-}
-
-.height-horizontal-frame {
-	/* height: TBD */
-}
-
-/* TODO: Delete these later */
-.grid-item--width3 {
-	width: 480px; 
- }
-.grid-item--width3 {
- width: 480px; 
-}
-  
-/* Square Frame */
-
-.width-square-frame {
-	/* width: TBD */
-}
-
-.height-square-frame {
-	/* height: TBD */
-}
-
- 
-/* TODO: Delete these later */
-.grid-item--width4 {
-	width: 640px; 
-}
-.grid-item--height4 {
-	height: 360px; 
+.horizontal {
+	width: 540px;
+	background-color: green; /* Activate background color for grid debugging */
+	height: 360px;
 }
 
 /* TODO: Add mobile sizing */
 
-/* Items */
-
-.item {
-	overflow: hidden; /* This ensures the images do not go outside the bounds of the grid item */
-}
-
-.item img {
+.grid-item img {
 	width: 100%;
 	-moz-transition: all 0.3s;
 	-webkit-transition: all 0.3s;
@@ -148,7 +101,7 @@ h3 {
 	z-index: -100;
 }
 
-.item:hover img {
+.grid-item:hover img {
 	-moz-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
