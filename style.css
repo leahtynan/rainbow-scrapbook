@@ -66,28 +66,27 @@ h3 {
 .grid-item {
 	width: 180px;
 	height: 180px;
-	float: left;
-	background-color: gray; /* Activate background color for grid debugging */
-	display: block;
+	/*float: left; */
+	/*background-color: gray; /* Activate background color for grid debugging */
+	display: inline-block;
 	border-color: hsla(0, 0%, 0%, 0.5);
 	border-radius: 5px;
 	margin: 10px;
 	overflow: hidden; /* This ensures the images do not go outside the bounds of the grid item */
-	
 }
 
 .vertical {
 	width: 180px;
-	background-color: red; /* Activate background color for grid debugging */
+	/*background-color: red; /* Activate background color for grid debugging */
 	height: 360px;
 }
 
 /* Horizontal Frame */
 
 .horizontal {
-	width: 540px;
-	background-color: green; /* Activate background color for grid debugging */
-	height: 360px;
+	width: 360px;
+	/*background-color: green; /* Activate background color for grid debugging */
+	height: 180px;
 }
 
 /* TODO: Add mobile sizing */

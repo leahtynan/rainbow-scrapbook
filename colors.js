@@ -1,4 +1,5 @@
-var position = 0; 
+var position = 0; // The default position in the color wheel is Yellow
+var numberItems = 8; // Each color has 8 items
 var colors = ["Yellow", "Green", "Blue", "Purple", "Red", "Orange"]; 
 // TODO: Could the asset filenames be stored in XML instead? Each entry would also contain a description of the image and its color.
 // A loop would do the following:
@@ -31,7 +32,7 @@ var data = {
 		"hex": "6f22b6",
 		"files": ["amethyst-shard", "dumbbell", "glass-jar_purple", "amethyst-chunk", "nail-polish_purple", "coil", "amethyst-chunk", "dumbbell"],
 		"description": ["amethyst shard", "dumbbell", "cylindrical glass jar", "amethyst chunk", "nail polish", "coil of fabric", "amethyst chunk", "dumbbell"],
-		"shapes": ["horizontal", "horizontal", "vertical", "horizontal", "vertical", "square", "horizontal", "horizontal"]
+		"shapes": ["vertical", "horizontal", "vertical", "horizontal", "vertical", "square", "horizontal", "horizontal"]
 	},
 	"Red": {
 		"angle": 90,
@@ -45,7 +46,7 @@ var data = {
 		"hex": "ffa500",
 		"files": ["leaf_orange", "citrine", "cat-dish", "leaf_orange", "nail-polish_orange", "leaf_orange", "leaf_orange", "citrine"],
 		"description": ["leaf", "citrine", "cat-shaped dish", "leaf", "nail polish", "leaf", "leaf", "citrine"],
-		"shapes": ["vertical", "square", "horizontal", "vertical", "vertical", "vertical", "vertical", "square"]
+		"shapes": ["square", "square", "horizontal", "square", "vertical", "square", "square", "square"]
 	},
 }
 
@@ -71,15 +72,36 @@ function changeColor(direction) {
 	document.body.style.backgroundColor = data[color].hex;
 	document.getElementById("color-wheel").style = "transform: rotate(" + data[color].angle + "deg)";
 	document.getElementById("title").innerHTML = colors[position];
-	var images = document.getElementsByClassName('image-to-update');
-	for (i = 0; i < 8; i++) { 
+	var images = document.getElementsByClassName('image-to-update'); // The images
+	var gridItems = document.getElementsByClassName('grid-item'); // The frames that hold the images
+	console.log("Number of grid items: " + gridItems.length);
+	for (i = 0; i < numberItems; i++) { 
 		// TODO: Need to load this data for Yellow when the page is opened
 		console.log("Filename: " + data[color].files[i]);
 		images[i].src = "images/" + data[color].files[i] + ".png";
 		images[i].alt = color + " " + data[color].description[i];
 		images[i].title = color + " " + data[color].description[i];
-		// TODO: Set grid size based on image shape
+		var shape = data[color].shapes[i];
+		console.log("Shape: " + shape)
+		clearPreviousShape(gridItems[i]);
+		// If the item's shape is not square, add additional classes to set those propo
+		if (shape == "vertical" || shape == "horizontal") {
+			console.log("++++ Setting the shape to: " + shape);
+			gridItems[i].classList.add(shape);
+		}
     }
+}
+
+function clearPreviousShape(gridItem) {
+	if (gridItem.classList.length > 1) {
+		console.log("Should remove: " + gridItem.classList[1]);
+		var classToRemove = gridItem.classList[1];
+		gridItem.classList.remove(classToRemove);
+		console.log("---> removed " + classToRemove);
+		console.log("New size of class list: " + gridItem.classList.length);
+	} else {
+		console.log("Don't need to remove a shape class");
+	}
 }
 
 var leftArrow = document.getElementById("left-arrow"); 
