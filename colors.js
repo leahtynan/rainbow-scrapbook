@@ -1,5 +1,5 @@
 var position = 0; // The default position in the color wheel is Yellow
-var numberItems = 8; // Each color has 8 items
+var maxNumberItems = 7; // Green is the color with the most number of items (as of March 14, 2020)
 var colors = ["Yellow", "Green", "Blue", "Purple", "Red", "Orange"]; 
 // TODO: Could the asset filenames be stored in XML instead? Each entry would also contain a description of the image and its color.
 // A loop would do the following:
@@ -9,44 +9,44 @@ var data = {
 	"Yellow": {
 		"angle": -30,
 		"hex": "ffff00",
-		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "rubber-ducky_yellow", "nail-polish_yellow", "star", "leaf_yellow", "star"],
-		"description": ["leaf", "star", "rubber ducky", "rubber ducky", "nail polish", "star", "leaf", "star"],
-		"shapes": ["vertical", "2x", "horizontal", "horizontal", "vertical", "square", "leaf_yellow", "square"]
+		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "nail-polish_yellow"],
+		"description": ["leaf", "star", "rubber ducky", "rubber ducky"],
+		"shapes": ["vertical", "square", "square", "vertical"]
 	},
 	"Green": {
 		"angle": -90,
 		"hex": "63bb45",
-		"files": ["bow_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "nail-polish_green", "measuring-cup", "snake-plant", "succulent"],
+		"files": ["bow_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "nail-polish_green", "snake-plant", "succulent"],
 		"description": ["bow", "measuring cup", "rubber ducky", "hedgehog", "nail polish", "measuring cup", "snake plant", "succuluent"],
-		"shapes": ["square", "horizontal", "horizontal", "horizontal", "2x", "horizontal", "square", "square"]
+		"shapes": ["square", "horizontal", "square", "horizontal", "vertical", "square", "square"]
 	},
 	"Blue": {
 		"angle": -150,
 		"hex": "0000ff",
-		"files": ["glass-jar_blue", "hedgehog_blue", "wavy-glass-jar", "glass-bird", "nail-polish_blue", "hedgehog_blue", "piggy", "wavy-glass-jar"],
-		"description": ["cylindrical glass jar", "hedgehog", "wavy glass jar", "glass bird", "nail polish", "hedgehog", "glass piggy", "wavy glass jar"],
-		"shapes": ["vertical", "horizontal", "vertical", "square", "vertical", "horizontal", "square", "vertical"]
+		"files": ["blue-bottle", "hedgehog_blue", "wavy-glass-jar", "glass-bird", "nail-polish_blue", "piggy"],
+		"description": ["cylindrical glass jar", "hedgehog", "wavy glass jar", "glass bird", "nail polish", "glass piggy"],
+		"shapes": ["vertical", "horizontal", "vertical", "horizontal", "vertical", "square"]
 	},
 	"Purple": {
 		"angle": 150,
 		"hex": "6f22b6",
-		"files": ["amethyst-shard", "dumbbell", "glass-jar_purple", "amethyst-chunk", "nail-polish_purple", "coil", "amethyst-chunk", "dumbbell"],
-		"description": ["amethyst shard", "dumbbell", "cylindrical glass jar", "amethyst chunk", "nail polish", "coil of fabric", "amethyst chunk", "dumbbell"],
-		"shapes": ["vertical", "horizontal", "vertical", "horizontal", "vertical", "2x", "horizontal", "horizontal"]
+		"files": ["amethyst-shard", "dumbbell", "glass-jar_purple", "amethyst-chunk", "nail-polish_purple", "coil"],
+		"description": ["amethyst shard", "dumbbell", "cylindrical glass jar", "amethyst chunk", "nail polish", "coil of fabric"],
+		"shapes": ["vertical", "horizontal", "square", "horizontal", "vertical", "square"]
 	},
 	"Red": {
 		"angle": 90,
 		"hex": "ff0000",
-		"files": ["clip", "leaf_red", "vase", "bow_red", "nail-polish_red", "bow_red", "vase", "leaf_red"],
-		"description": ["clip", "leaf", "vase", "bow", "nail polish", "bow", "vase", "leaf"],
-		"shapes": ["horizontal", "square", "vertical", "square", "vertical", "square", "vertical", "square"]
+		"files": ["clip", "leaf_red", "vase", "bow_red", "nail-polish_red"],
+		"description": ["clip", "leaf", "vase", "bow", "nail polish"],
+		"shapes": ["square", "square", "vertical", "square", "vertical"]
 	},
 	"Orange": {
 		"angle": 30,
 		"hex": "ffa500",
-		"files": ["leaf_orange", "citrine", "cat-dish", "leaf_orange", "nail-polish_orange", "leaf_orange", "leaf_orange", "citrine"],
-		"description": ["leaf", "citrine", "cat-shaped dish", "leaf", "nail polish", "leaf", "leaf", "citrine"],
-		"shapes": ["square", "2x", "horizontal", "square", "vertical", "square", "square", "square"]
+		"files": ["leaf_orange", "citrine", "cat-dish", "nail-polish_orange"],
+		"description": ["leaf", "citrine", "cat-shaped dish", "nail polish"],
+		"shapes": ["square", "square", "horizontal", "vertical"]
 	},
 }
 
@@ -74,6 +74,8 @@ function changeColor(direction) {
 	document.getElementById("title").innerHTML = colors[position];
 	var images = document.getElementsByClassName('image-to-update'); // The images
 	var items = document.getElementsByClassName('item'); // The frames that hold the images
+	var numberItems = data[color].files.length;
+	// 1. Fill in images for items in this color's set
 	for (i = 0; i < numberItems; i++) { 
 		// TODO: Need to load this data for Yellow when the page is opened
 		images[i].src = "images/" + data[color].files[i] + ".png";
@@ -86,6 +88,18 @@ function changeColor(direction) {
 			items[i].classList.add(shape);
 		}
     }
+	// 2. Keep all others blank
+	if (numberItems < maxNumberItems) {
+		var difference = maxNumberItems - numberItems;
+		for (i = numberItems; i < maxNumberItems; i++) {
+			images[i].src = "images/blank.png";
+			images[i].alt = "Empty image";
+			images[i].title = "Empty image";
+			clearPreviousShape(items[i]);
+			items[i].classList.add("invisible"); 
+		}
+		
+	}
 }
 
 function clearPreviousShape(item) {
