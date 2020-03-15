@@ -1,17 +1,16 @@
-var position = 0; // The default position in the color wheel is Yellow
+// *** Global Variables ***
+var position = 0; // The default position in the color wheel is Yellow (#0), Green is #1, Blue is #2...
 var maxNumberItems = 7; // Green is the color with the most number of items (as of March 14, 2020)
 var colors = ["Yellow", "Green", "Blue", "Purple", "Red", "Orange"]; 
-// TODO: Could the asset filenames be stored in XML instead? Each entry would also contain a description of the image and its color.
-// A loop would do the following:
-// 1. Check that its value for color matches the current color selected in the wheel
-// 2. If it is a color match (i.e. the asset should be displayed), then grab the filename to display it and description for alt and title text.
+
+// *** Data About Objects in Scrapbook, Per Color ***
 var data = {
 	"Yellow": {
 		"angle": -30,
 		"hex": "ffff00",
-		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "nail-polish_yellow"],
-		"description": ["leaf", "star", "rubber ducky", "rubber ducky"],
-		"shapes": ["vertical", "square", "square", "vertical"]
+		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "nail-polish_yellow", "hedgehog_yellow", "clip_yellow"],
+		"description": ["leaf", "star", "rubber ducky", "nail polish", "hedgehog", "clip"],
+		"shapes": ["vertical", "square", "square", "vertical", "horizontal", "square"]
 	},
 	"Green": {
 		"angle": -90,
@@ -30,14 +29,14 @@ var data = {
 	"Purple": {
 		"angle": 150,
 		"hex": "6f22b6",
-		"files": ["amethyst-shard", "dumbbell", "glass-jar_purple", "amethyst-chunk", "nail-polish_purple", "coil"],
-		"description": ["amethyst shard", "dumbbell", "cylindrical glass jar", "amethyst chunk", "nail polish", "coil of fabric"],
+		"files": ["amethyst-shard", "dumbbell", "bow_purple", "amethyst-chunk", "nail-polish_purple", "coil"],
+		"description": ["amethyst shard", "dumbbell", "bow", "amethyst chunk", "nail polish", "coil of fabric"],
 		"shapes": ["vertical", "horizontal", "square", "horizontal", "vertical", "square"]
 	},
 	"Red": {
 		"angle": 90,
 		"hex": "ff0000",
-		"files": ["clip", "leaf_red", "vase", "bow_red", "nail-polish_red"],
+		"files": ["clip_red", "leaf_red", "vase", "bow_red", "nail-polish_red"],
 		"description": ["clip", "leaf", "vase", "bow", "nail polish"],
 		"shapes": ["square", "square", "vertical", "square", "vertical"]
 	},
@@ -49,9 +48,14 @@ var data = {
 		"shapes": ["square", "square", "horizontal", "vertical"]
 	},
 }
+// TODO: Could the asset filenames be stored in XML instead? Each entry would also contain a description of the image and its color.
+// A loop would do the following:
+// 1. Check that its value for color matches the current color selected in the wheel
+// 2. If it is a color match (i.e. the asset should be displayed), then grab the filename to display it and description for alt and title text.
 
+// *** Color Wheel Turn Feedback ***
 function changeColor(direction) {
-// *** Cycles through the color wheel one unit, direction dependent on whether left or right arrow is pressed ***
+// Cycles through the color wheel one unit, direction dependent on whether left or right arrow is pressed 
 	if (direction == "left") {
 		if (position == 0) {
 			position = 5;
@@ -88,7 +92,7 @@ function changeColor(direction) {
 			items[i].classList.add(shape);
 		}
     }
-	// 2. Keep all others blank
+	// 2. Set any remaining pictures to blank
 	if (numberItems < maxNumberItems) {
 		var difference = maxNumberItems - numberItems;
 		for (i = numberItems; i < maxNumberItems; i++) {
@@ -109,6 +113,7 @@ function clearPreviousShape(item) {
 	}
 }
 
+// *** Listeners ***
 var leftArrow = document.getElementById("left-arrow"); 
 leftArrow.addEventListener("click", function () { 
   changeColor("left");
