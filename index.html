@@ -3,7 +3,6 @@
 	<title>Rainbow Scrapbook</title>
 	<!-- TODO: Add meta data once this goes online -->
 	<script src="http://leaverou.github.io/conic-gradient/conic-gradient.js"></script>
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -24,28 +23,28 @@
 	
 	<!-- Content -->
 	<div class="grid">
-		<div class="grid-item vertical">
+		<div class="item vertical">
 			<img class="image-to-update" src="images/leaf_yellow.png">
 		</div>
-		<div class="grid-item">
+		<div class="item 2x">
 			<img class="image-to-update" src="images/star.png">
 		</div>
-		<div class="grid-item">
+		<div class="item">
 			<img class="image-to-update" src="images/rubber-ducky_yellow.png">
 		</div>
-		<div class="grid-item">
+		<div class="item">
 			<img class="image-to-update" src="images/rubber-ducky_yellow.png">
 		</div>
-		<div class="grid-item vertical">
+		<div class="item vertical">
 			<img class="image-to-update" src="images/nail-polish_yellow.png">
 		</div>
-		<div class="grid-item">
+		<div class="item">
 			<img class="image-to-update" src="images/star.png">
 		</div>
-		<div class="grid-item vertical">
+		<div class="item vertical">
 			<img class="image-to-update" src="images/leaf_yellow.png">
 		</div>
-		<div class="grid-item">
+		<div class="item">
 			<img class="image-to-update" src="images/star.png">
 		</div>
 	</div>
@@ -58,23 +57,6 @@
 			<li id="right-arrow" class="arrow"><img src="images/arrow.png" alt="Arrow for turning the color wheel right" title="Arrow for turning the color wheel right"></li>
 		</ul>
 	</footer>
-
-	<!-- Masonry Initializer -->
-	<script>
-		console.log("got here");
-		var elem = document.querySelector('.grid');
-		var msnry = new Masonry( elem, {
-			// options
-			itemSelector: '.grid-item',
-			columnWidth: 200
-		});
-
-		// element argument can be a selector string
-		//   for an individual element
-		var msnry = new Masonry( '.grid', {
-			// options
-		});
-	</script>
 	
 	<!-- Color Wheel Data & User Interface Operations -->
 	<script type="text/javascript" src="colors.js"></script> 
