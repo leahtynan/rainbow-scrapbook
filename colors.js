@@ -1,6 +1,6 @@
 // *** Global Variables ***
 var position = 0; // The default position in the color wheel is Yellow (#0), Green is #1, Blue is #2...
-var maxNumberItems = 7; // Green is the color with the most number of items (as of March 14, 2020)
+var maxNumberItems = 6; // Green is the color with the most number of items (as of March 14, 2020)
 var colors = ["Yellow", "Green", "Blue", "Purple", "Red", "Orange"]; 
 
 // *** Data About Objects in Scrapbook, Per Color ***
@@ -15,9 +15,9 @@ var data = {
 	"Green": {
 		"angle": -90,
 		"hex": "63bb45",
-		"files": ["bow_green", "measuring-cup", "rubber-ducky_green", "hedgehog_green", "nail-polish_green", "snake-plant", "succulent"],
-		"description": ["bow", "measuring cup", "rubber ducky", "hedgehog", "nail polish", "measuring cup", "snake plant", "succuluent"],
-		"shapes": ["square", "horizontal", "square", "horizontal", "vertical", "square", "square"]
+		"files": ["bow_green", "rubber-ducky_green", "hedgehog_green", "nail-polish_green", "snake-plant", "measuring-cup"],
+		"description": ["bow", "rubber ducky", "hedgehog", "nail polish", "measuring cup", "snake plant", "measuring cup"],
+		"shapes": ["square", "square", "horizontal", "vertical", "square", "horizontal"]
 	},
 	"Blue": {
 		"angle": -150,
