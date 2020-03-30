@@ -8,9 +8,9 @@ var data = {
 	"Yellow": {
 		"angle": -30,
 		"hex": "ffff00",
-		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "nail-polish_yellow", "hedgehog_yellow", "clip_yellow"],
-		"description": ["leaf", "star", "rubber ducky", "nail polish", "hedgehog", "clip"],
-		"shapes": ["vertical", "square", "square", "vertical", "horizontal", "square"]
+		"files": ["leaf_yellow", "star", "rubber-ducky_yellow", "goldfish", "nail-polish_yellow", "goose"],
+		"description": ["leaf", "star", "rubber ducky", "goose", "nail polish", "goldfish"],
+		"shapes": ["vertical", "square", "square", "square", "vertical", "square"]
 	},
 	"Green": {
 		"angle": -90,
@@ -22,9 +22,9 @@ var data = {
 	"Blue": {
 		"angle": -150,
 		"hex": "0000ff",
-		"files": ["blue-bottle", "hedgehog_blue", "wavy-glass-jar", "glass-bird", "nail-polish_blue", "piggy"],
-		"description": ["cylindrical glass jar", "hedgehog", "wavy glass jar", "glass bird", "nail polish", "glass piggy"],
-		"shapes": ["vertical", "horizontal", "vertical", "horizontal", "vertical", "square"]
+		"files": ["mug", "hedgehog_blue", "wavy-glass-jar", "glass-bird", "nail-polish_blue", "piggy"],
+		"description": ["mug", "hedgehog", "wavy glass jar", "glass bird", "nail polish", "glass piggy"],
+		"shapes": ["square", "horizontal", "vertical", "horizontal", "vertical", "square"]
 	},
 	"Purple": {
 		"angle": 150,
@@ -36,16 +36,16 @@ var data = {
 	"Red": {
 		"angle": 90,
 		"hex": "ff0000",
-		"files": ["clip_red", "leaf_red", "vase", "bow_red", "nail-polish_red"],
-		"description": ["clip", "leaf", "vase", "bow", "nail polish"],
-		"shapes": ["square", "square", "vertical", "square", "vertical"]
+		"files": ["clip_red", "leaf_red", "vase", "bow_red", "nail-polish_red", "bear"],
+		"description": ["clip", "leaf", "vase", "bow", "nail polish", "bear"],
+		"shapes": ["square", "square", "vertical", "square", "vertical", "square"]
 	},
 	"Orange": {
 		"angle": 30,
 		"hex": "ffa500",
-		"files": ["leaf_orange", "citrine", "cat-dish", "nail-polish_orange"],
-		"description": ["leaf", "citrine", "cat-shaped dish", "nail polish"],
-		"shapes": ["square", "square", "horizontal", "vertical"]
+		"files": ["leaf_orange", "citrine", "cat-dish", "nail-polish_orange", "terracotta", "bunny"],
+		"description": ["leaf", "citrine", "cat-shaped dish", "nail polish", "bear", "bunny"],
+		"shapes": ["square", "square", "horizontal", "vertical", "square", "vertical"]
 	},
 }
 // TODO: Could the asset filenames be stored in XML instead? Each entry would also contain a description of the image and its color.
