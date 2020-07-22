@@ -3,7 +3,7 @@
 	<title>Rainbow Scrapbook</title>
 	<!-- TODO: Add meta data once this is ready for SEO -->
 	<meta name="viewport" content="width=device-width, initial scale=1.0" />
-	<script src="http://leaverou.github.io/conic-gradient/conic-gradient.js"></script>
+	<!--<script src="http://leaverou.github.io/conic-gradient/conic-gradient.js"></script>-->
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -20,28 +20,30 @@
   }
 </style>
 
-<body onload="changeColor(0)">
+<body>
 	
 	<!-- Content -->
 	<!-- No images or classes added, content for Yellow populates when the page loads -->
-	<div class="grid">
-		<div class="item">
-			<img class="image-to-update" src="">
-		</div>
-		<div class="item">
-			<img class="image-to-update" src="">
-		</div>
-		<div class="item">
-			<img class="image-to-update" src="">
-		</div>
-		<div class="item">
-			<img class="image-to-update" src="">
-		</div>
-		<div class="item vertical">
-			<img class="image-to-update" src="">
-		</div>
-		<div class="item">
-			<img class="image-to-update" src="">
+	<div id="grid-container">
+		<div id="grid">
+			<div class="item">
+				<img class="image-to-update" src="">
+			</div>
+			<div class="item">
+				<img class="image-to-update" src="">
+			</div>
+			<div class="item">
+				<img class="image-to-update" src="">
+			</div>
+			<div class="item">
+				<img class="image-to-update" src="">
+			</div>
+			<div class="item vertical">
+				<img class="image-to-update" src="">
+			</div>
+			<div class="item">
+				<img class="image-to-update" src="">
+			</div>
 		</div>
 	</div>
 	
@@ -55,7 +57,8 @@
 	</footer>
 	
 	<!-- Color Wheel Data & User Interface Operations -->
-	<script type="text/javascript" src="colors.js"></script> 
-
+	<script type="text/javascript" src="colors.js"></script> 	
+	<!-- Image Management -->
+	<script type="text/javascript" src="images.js"></script> 
 </body>
 </html>

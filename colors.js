@@ -81,7 +81,6 @@ function changeColor(direction) {
 	var numberItems = data[color].files.length;
 	// 1. Fill in images for items in this color's set
 	for (i = 0; i < numberItems; i++) { 
-		// TODO: Need to load this data for Yellow when the page is opened
 		images[i].src = "images/" + data[color].files[i] + ".png";
 		images[i].alt = color + " " + data[color].description[i];
 		images[i].title = color + " " + data[color].description[i];
