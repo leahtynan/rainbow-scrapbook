@@ -78,38 +78,7 @@ function changeColor(direction) {
 	document.getElementById("title").innerHTML = colors[position];
 	var images = document.getElementsByClassName('image-to-update'); // The images
 	var items = document.getElementsByClassName('item'); // The frames that hold the images
-	var numberItems = data[color].files.length;
-	// 1. Fill in images for items in this color's set
-	for (i = 0; i < numberItems; i++) { 
-		images[i].src = "images/" + data[color].files[i] + ".png";
-		images[i].alt = color + " " + data[color].description[i];
-		images[i].title = color + " " + data[color].description[i];
-		var shape = data[color].shapes[i];
-		clearPreviousShape(items[i]);
-		// If the item's shape is not square, add additional classes to set those propo
-		if (shape == "vertical" || shape == "horizontal") {
-			items[i].classList.add(shape);
-		}
-    }
-	// 2. Set any remaining pictures to blank
-	if (numberItems < maxNumberItems) {
-		var difference = maxNumberItems - numberItems;
-		for (i = numberItems; i < maxNumberItems; i++) {
-			images[i].src = "images/blank.png";
-			images[i].alt = "Empty image";
-			images[i].title = "Empty image";
-			clearPreviousShape(items[i]);
-			items[i].classList.add("invisible"); 
-		}
-		
-	}
-}
-
-function clearPreviousShape(item) {
-	if (item.classList.length > 1) {
-		var classToRemove = item.classList[1];
-		item.classList.remove(classToRemove);
-	}
+	updateItemSet(position);
 }
 
 // *** Listeners ***

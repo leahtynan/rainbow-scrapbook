@@ -51,7 +51,7 @@ h3 {
 
 #grid {
 	max-width: 1200px;
-	display: block;
+	display: none; /* Hide the grid of images until all images load; visibility changed via JS */
 	margin: 30px auto;
 	overflow: hidden;
 }
@@ -67,7 +67,6 @@ h3 {
 	width: 240px;
 	height: 240px;
 	float: left;
-	/* background-color: gray; /* Activate background color for grid debugging */
 	display: inline-block;
 	border-color: hsla(0, 0%, 0%, 0.5);
 	border-radius: 5px;
@@ -76,13 +75,11 @@ h3 {
 
 .vertical {
 	width: 150px;
-	/* background-color: red; /* Activate background color for grid debugging */
 	height: 240px;
 }
 
 .horizontal {
 	width: 360px;
-	/* background-color: green; /* Activate background color for grid debugging */
 	height: 240px;
 }
 
@@ -90,8 +87,6 @@ h3 {
 	width: 0;
 	height: 0;
 }
-
-/* TODO: Add mobile sizing */
 
 .item img {
 	width: 100%;
@@ -179,18 +174,15 @@ h3 {
 	.item {
 		width: 150px;
 		height: 150px;
-		/* background-color: gray; /* Activate background color for grid debugging */
 	}
 
 	.vertical {
 		width: 150px;
-		/* background-color: red; /* Activate background color for grid debugging */
 		height: 200px;
 	}
 
 	.horizontal {
 		width: 150px;
-		/* background-color: green; /* Activate background color for grid debugging */
 		height: 150px;
 	}
 }
@@ -199,18 +191,15 @@ h3 {
 	.item {
 		width: 80px;
 		height: 80px;
-		/* background-color: gray; /* Activate background color for grid debugging */
 	}
 
 	.vertical {
 		width: 50px;
-		/* background-color: red; /* Activate background color for grid debugging */
 		height: 80px;
 	}
 
 	.horizontal {
 		width: 120px;
-		/* background-color: green; /* Activate background color for grid debugging */
 		height: 80px;
 	}
 }
