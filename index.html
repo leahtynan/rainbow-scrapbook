@@ -1,10 +1,17 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	<title>Rainbow Scrapbook</title>
-	<!-- TODO: Add meta data once this is ready for SEO -->
-	<meta name="viewport" content="width=device-width, initial scale=1.0" />
-	<!--<script src="http://leaverou.github.io/conic-gradient/conic-gradient.js"></script>-->
-	<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/png" href="favicon.ico">
+<title>Leah Tynan | Rainbow Scrapbook</title>
+<meta name="description" content="User interface for exploring brilliantly colored collections of objects">
+<meta property="og:title" content="Leah Tynan | Rainbow Scrapbook" />
+<meta property="og:url" content="http://www.leahtynan.com/rainbow-scrapbook" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="User interface for exploring brilliantly colored collections of objects" />
+<meta property="og:image" content="http://www.leahtynan.com/rainbow-scrapbook/rainbow-scrapbook_og-image.jpg" />
+<meta name="viewport" content="width=device-width, initial scale=1.0" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="http://leaverou.github.io/conic-gradient/conic-gradient.js"></script>
 </head>
 
 <!-- Color Wheel Polyfill -->
@@ -21,32 +28,28 @@
 </style>
 
 <body>
-	
-	<!-- Content -->
-	<!-- No images or classes added, content for Yellow populates when the page loads -->
-	<div id="grid-container">
-		<div id="preloader">
-			<h3>Loading...</h3>
+	<!-- Changing Images -->
+	<div id="preloader">
+		<h3>Loading...</h3>
+	</div>
+	<div id="grid">
+		<div class="item">
+			<img class="image-to-update">
 		</div>
-		<div id="grid">
-			<div class="item">
-				<img class="image-to-update">
-			</div>
-			<div class="item">
-				<img class="image-to-update">
-			</div>
-			<div class="item">
-				<img class="image-to-update">
-			</div>
-			<div class="item">
-				<img class="image-to-update">
-			</div>
-			<div class="item vertical">
-				<img class="image-to-update">
-			</div>
-			<div class="item">
-				<img class="image-to-update">
-			</div>
+		<div class="item">
+			<img class="image-to-update">
+		</div>
+		<div class="item">
+			<img class="image-to-update">
+		</div>
+		<div class="item">
+			<img class="image-to-update">
+		</div>
+		<div class="item vertical">
+			<img class="image-to-update">
+		</div>
+		<div class="item">
+			<img class="image-to-update">
 		</div>
 	</div>
 	
@@ -63,5 +66,6 @@
 	<script type="text/javascript" src="colors.js"></script> 	
 	<!-- Image Management -->
 	<script type="text/javascript" src="images.js"></script> 
+	
 </body>
 </html>

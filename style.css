@@ -1,3 +1,5 @@
+/* --------- Overall Page --------- */
+
 * { 
 	box-sizing: border-box;
 	margin: 0;
@@ -25,6 +27,8 @@ body {
 	background-color: yellow;
 }
 
+/* ------------- Text ------------- */
+
 h1 {
 	font-size: 40px;
 	margin-bottom: 15px;
@@ -47,10 +51,10 @@ h3 {
 	display block;
 }
 
-/* Grid */
+/* ------------- Grid ------------- */
 
 #grid {
-	max-width: 1200px;
+	max-width: 1100px;
 	display: none; /* Hide the grid of images until all images load; visibility changed via JS */
 	margin: 30px auto;
 	overflow: hidden;
@@ -70,7 +74,7 @@ h3 {
 	display: inline-block;
 	border-color: hsla(0, 0%, 0%, 0.5);
 	border-radius: 5px;
-	margin: 10px 30px;
+	margin: 10px 25px;
 }
 
 .vertical {
@@ -104,7 +108,7 @@ h3 {
 	cursor: pointer;
 }
 
-/* Footer/Navigation */
+/* --------- Footer/Navigation --------- */
 
 #footer {
     position: fixed; 
@@ -149,8 +153,10 @@ h3 {
     -ms-filter: "FlipH";
 }
 
+/* --------- Tablet/Mobile --------- */
 
-@media screen and (max-width: 820px) {
+
+@media screen and (max-width: 1000px) {
 	#grid {
 		margin: 5px auto;
 	}
